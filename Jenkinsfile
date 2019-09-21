@@ -10,18 +10,18 @@ pipeline {
             }
         }
 
-        stage('Sonar-Scan'){
-            steps{
-                sh '''
-                BRIDGES_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
-                ./gradlew sonarqube \
-                -Dsonar.projectKey=api-test-demo-1 \
-                -Dsonar.host.url=http://120.79.215.69:9000 \
-                -Dsonar.login=admin  \
-                -Dsonar.password=admin
-                '''
-            }
-        }
+        //stage('Sonar-Scan'){
+        //    steps{
+       //       sh '''
+       //        BRIDGES_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
+       //        ./gradlew sonarqube \
+       //        -Dsonar.projectKey=api-test-demo-1 \
+       //        -Dsonar.host.url=http://120.79.215.69:9000 \
+       //        -Dsonar.login=admin  \
+       //        -Dsonar.password=admin
+       //       '''
+       //     }
+       // }
 
         stage('Build jar'){
             steps{
