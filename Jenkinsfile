@@ -16,7 +16,7 @@ pipeline {
                 BRIDGES_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
                 ./gradlew sonarqube \
                 -Dsonar.projectKey=xxx \
-                -Dsonar.host.url=http://10.209.21.4:9000 \
+                -Dsonar.host.url=http://127.0.0.1:9000 \
                 -Dsonar.login=admin  \
                 -Dsonar.password=admin
                 '''
